@@ -13,9 +13,20 @@ Prevents LLM hallucination of citations, statistics, and source-attributed claim
 - Flags red-flag patterns (statistics, round numbers, attributed claims) as mandatory verification triggers
 - Requires explicit gap-marking (`[UNVERIFIED]`) when sources are unavailable
 
+### academic-latex-proofread
+
+Read-only proofreading audit for LaTeX academic papers. Checks LaTeX mechanics, prose quality, grammar, and source grounding red flags. Reports violations with line numbers and suggested fixes without editing source files.
+
+**What it does:**
+- Checks universal LaTeX issues (dashes, quotes, brackets, subscripts, unclosed environments)
+- Flags prose problems (throat-clearers, hackneyed adverbs, long paragraphs, dash overuse)
+- Catches source grounding red flags (unsourced statistics, unlinked claims)
+- Supports user-defined style conventions (semantic macros, banned terms, preferred terminology)
+
+Includes an example configuration for CGEL-style linguistics in `references/example-linguistics-config.md`.
+
 ### More skills planned
 
-- **academic-latex-proofread** -- Style-aware proofreading for LaTeX papers with configurable conventions
 - **session-management** -- Context persistence across sessions (shutdown protocol, startup checks, session logging)
 
 ## Installation
