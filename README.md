@@ -25,9 +25,14 @@ Read-only proofreading audit for LaTeX academic papers. Checks LaTeX mechanics, 
 
 Includes an example configuration for CGEL-style linguistics in `references/example-linguistics-config.md`.
 
-### More skills planned
+### session-management
 
-- **session-management** -- Context persistence across sessions (shutdown protocol, startup checks, session logging)
+Prevents context loss across LLM sessions for multi-session projects. Captures decisions, state changes, and open questions at session end; restores context at session start.
+
+**What it does:**
+- Shutdown protocol: summarizes session, updates STATUS.md and session-log.jsonl, asks about context file updates
+- Startup protocol: reads persistence files, briefs user on last session's state and open items
+- Long session recovery: re-reads persistence files when context fades during extended sessions
 
 ## Installation
 
